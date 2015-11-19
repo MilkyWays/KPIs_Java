@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.enable.DynamicMethodInvocation" value="false" />  
+    <constant name="struts.devMode" value="true" />  
+    <constant name="struts.custom.i18n.resources" value="myapp" />  
+   
+    <package name="default" extends="struts-default" namespace="/">  
+   
+   
+        <action name="login" 
+            class="com.kpis.login.LoginAction" 
+            method="Login">
+            <result name="admin">/Admin.jsp</result>
+            <result name="dean">/Dean.jsp</result>
+            <result name="lecturer">/Lecturer.jsp</result>
+            <result name="psoffice">/PersonalOffice.jsp</result>
+            <result name="rector">/Rector.jsp</result>
+      </action>
+      <action name="form-account" 
+            class="com.kpis.objects.admin" 
+            method="TaiKhoan">
+            <result name="success">/Admin.jsp</result>
+            <result name="faile">/Dean.jsp</result>           
+      </action>
+      
+      
+      
+    </package>  
+</struts>
